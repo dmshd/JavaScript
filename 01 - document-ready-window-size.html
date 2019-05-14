@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js window resize</title>
+  <style>
+    html, body, p {
+      margin: 0;
+      padding: 0;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    body {
+      height: 100%;
+      background: rgb(63,94,251);
+      background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,164,252,1) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      line-height: .2;
+    }
+    #window-size, h1 {
+      font-size: 5em;
+      opacity: 1;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: #222 2px 3px;
+      letter-spacing: -5px;
+    }
+    @media screen and (max-width: 640px) {
+      #window-size, h1 {
+        font-size: 2em;
+        letter-spacing: -2px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>window-size</h1>
+  <p id="window-size"></p>
+</body>
+<script>
+// Dom element correspondant au <p id="window-size"></p>
+const winSizeDomContainer = document.getElementById('window-size');
+
+// function pour placer le texte issu de window.innerWidth et Height dans le html et éviter de l'écrire deux fois
+displayWindowSize = () => winSizeDomContainer.innerHTML = `${window.innerWidth}x${window.innerHeight}`;
+
+// Une fois la page chargée et interprétée par le navigateur
+document.addEventListener("DOMContentLoaded", function() {
+   console.log('Your document is ready!');
+   displayWindowSize();
+});
+
+// EventListener qui va s'activer dés que l'on change la taille de la fenêtre
+window.addEventListener('resize', () => {
+    displayWindowSize();
+});
+
+</script>
+</html>

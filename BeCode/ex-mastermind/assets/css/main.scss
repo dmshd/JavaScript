@@ -1,0 +1,74 @@
+@import 'normalize';
+@import 'colors';
+
+body {
+  background: linear-gradient(224deg, #26a685, #5f6966);
+  background-size: 400% 400%;
+
+  -webkit-animation: Mastermind 30s ease infinite;
+  -moz-animation: Mastermind 30s ease infinite;
+  animation: Mastermind 30s ease infinite;
+
+  @-webkit-keyframes Mastermind {
+    0%{background-position:0% 58%}
+    50%{background-position:100% 43%}
+    100%{background-position:0% 58%}
+  }
+  @-moz-keyframes Mastermind {
+    0%{background-position:0% 58%}
+    50%{background-position:100% 43%}
+    100%{background-position:0% 58%}
+  }
+  @keyframes Mastermind { 
+    0%{background-position:0% 58%}
+    50%{background-position:100% 43%}
+    100%{background-position:0% 58%}
+  }
+  #mainsection {
+    margin-left: 5%;
+    margin-right: 5%;
+    h1 {
+    margin-left: 120px;
+    }
+    pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+    .box {
+      background-color: LightSlateGray;
+      text-align: center;
+    }
+    #choicecont, #answcont {
+      height: 75px;
+      width: 100%;
+    }
+    #choicecont {
+      background-color: LightSlateGray;
+    }
+    #answcont {
+      background-color: SlateGray;
+    }
+    #histcont {
+      height: auto;
+    }
+    .boule {
+      display: inline-block;
+      margin: 10px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+    .ligne {
+      height: 75px;
+      width: 100%;
+      background-color: pink;
+    }
+  }
+}
+
+
+
+  
